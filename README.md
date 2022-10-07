@@ -1,2 +1,2 @@
-# anker-themes
+# Anker Themes
 This repo is only for themes.
