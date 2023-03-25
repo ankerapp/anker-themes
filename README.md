@@ -99,7 +99,7 @@ To develop a theme for Anker please follow the guidelines below:
         ```
     * Make your changes following the instructions [here](https://github.com/ankerapp/anker-app#how)
 
-7. After you finish with the theme and you're happy with it fork the [Anker
+7. After you finish and you're happy with the result fork the [Anker
    themes](https://github.com/ankerapp/anker-themes) repository and clone it
     ```bash
     git clone https://github.com/<your-username>/anker-themes.git
@@ -117,7 +117,8 @@ To develop a theme for Anker please follow the guidelines below:
     * inside `themes` directory create a directory for your theme with the same
         name as your theme e.g your theme name is `_example.scss` your directory
         will become `example/`
-    * Inside put your `_<your-theme-name>.scss` also your theme's JS file
+    * Inside put your `_<your-theme-name>.scss` also your theme's JS file and
+        `data.json` if necessary.
     * Take screenshots for different devices. At least one should be included!
     * Create a `README.md` file
     * Put your screenshots in `README.md` file also your instructions if needed
