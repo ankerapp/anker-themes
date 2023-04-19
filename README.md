@@ -98,18 +98,29 @@ To develop a theme for Anker please follow the guidelines below:
     * Inside `themes` directory create a directory for your theme with the same
         name as your theme e.g your theme name is `_example.scss` your directory
         will become `example/`.
+
     * Inside your theme directory you should have a `js` and `sass` directory.
         Your theme JS file goes in `example/js` and the SCSS file in
         `example/sass`.
+
+        > **Note:** If you've different SCSS variants you've to name them with
+        a dot. For example you have a light and a dark version of your theme.
+        You'll have to name them `_example.light.scss` and `_example.dark.scss`.
+
     * If your theme don't have a specific JS file and used the default theme you
         still have to rename it to your theme name and include it in theme
         files.
+
     * Inside put your `_<your-theme-name>.scss` also `<your-theme-name>.js` file
         and `data.json` if necessary.
+
     * Take a screenshot!
-    * Create a `README.md` file
-    * Put your screenshot in `README.md` file also your instructions if needed
-    * Best practice add a demo maybe a Netlify demo which is done in minutes
+
+    * Create a `README.md` file.
+
+    * Put your screenshot in `README.md` file also your instructions if needed.
+
+    * Best practice add a demo maybe a Netlify demo which is done in minutes.
 
 11. Create a new [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from `<your-branch-name>`
 
