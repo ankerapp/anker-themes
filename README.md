@@ -2,60 +2,41 @@
 This repository is only for themes.
 
 # How to Use a Theme?
-Every theme comes with a JS file and a SCSS file. Although in some cases there
-might only be a SCSS file if the default markup was used. In this case you use
-the default theme JS file. Also there might be cases that a `data.json` file is
-included for reference just to show you how to structure your data for that
-specific theme.
+Every theme comes with a JS file and a SCSS file. Although there might be cases
+that a `data.json` file is included for reference just to show you how to
+structure your data for that specific theme. To use a theme you need those files
+in your project's `themes` directory.
 
-To use a theme you need those files in your project's `src` directory. You can
-either download ZIP or clone this repo. To avoid downloading or cloning the whole
-repo you can use cURL which lets you export it directly from this repository like
-following:
+### How to Get a Specific Theme?
+To get a specific theme navigate to `themes` directory in this Repo. For example
+you want one of the Anker default themes, the `anker-theme-basic`. You want to
+navigate there and copy the link. The link will look as follows:
 
 ```bash
-curl https://raw.githubusercontent.com/ankerapp/anker-themes/master/<theme-name>/_<theme-name>.scss >_<theme-name>.scss
+https://github.com/ankerapp/anker-themes/tree/master/themes/anker-theme-basic/
 ```
 
-### Where do I Get the Link for cURL from?
-1. Select the theme folder you want to use.
+Next you want to use SVN to export the whole directory from this repo into your
+local themes directory. To use SVN we've to change the URL a little. Replace
+`tree/master` with `trunk`. Navigate to `themes` directory and run the following
+command.
 
-2. Next click on the theme file you wish to export.
-
-3. Now click on raw to show the raw code you will see the URL changes to
-   `https://raw.githubusercontent.com/...`
-
-4. Copy the URL and run the following command e.g theme name is
-   `_midnight-dark.scss`
 ```bash
-curl <raw-code-link> >_midnight-dark.scss
+svn export https://github.com/ankerapp/anker-themes/trunk/themes/<theme-name>
 ```
 
-### Put your Theme in the Right Directory
-1. Navigate to `src/` directory
+After your themes files are imported run the build command to build the project.
+It's a Makefile command. If you don't have it installed you can get it from [here](https://www.gnu.org/software/make/).
+On windows you can install with [Chocolatey](https://chocolatey.org/install).
 
-2. Move the JS file to `src/js/themes` or download it using cURL.
-
-3. Add the theme in `src/js/config.js` file.
-
-    ```javascript
-    export const THEME = "<theme name>";
-    ```
-4. Move the SCSS file to `src/sass/themes` or use cURL.
-
-5. Add the SCSS file in `src/sass/themes/_index.sass`.
-
-    ```scss
-    @forward "<theme name>";
-    ```
-6. Build the project and deploy.
-    ```bash
-    npm run build
-    ```
+```bash
+make build
+```
 
 # Contributing to Anker
 If you want to contribute to Anker and want to make your own themes and
-publish them here then please follow [these](https://github.com/0xkhan/anker-demo/blob/master/guides/CONTRIBUTING.md) guidelines.
+publish them here then please follow [these](https://github.com/ankerapp/anker-app/blob/master/CONTRIBUTING.md)
+guidelines.
 
 # How do I Make a Theme?
 
@@ -114,14 +95,20 @@ To develop a theme for Anker please follow the guidelines below:
     ```
 
 10. Put everything together and get your PR ready
-    * inside `themes` directory create a directory for your theme with the same
+    * Inside `themes` directory create a directory for your theme with the same
         name as your theme e.g your theme name is `_example.scss` your directory
-        will become `example/`
-    * Inside put your `_<your-theme-name>.scss` also your theme's JS file and
-        `data.json` if necessary.
-    * Take screenshots for different devices. At least one should be included!
+        will become `example/`.
+    * Inside your theme directory you should have a `js` and `sass` directory.
+        Your theme JS file goes in `example/js` and the SCSS file in
+        `example/sass`.
+    * If your theme don't have a specific JS file and used the default theme you
+        still have to rename it to your theme name and include it in theme
+        files.
+    * Inside put your `_<your-theme-name>.scss` also `<your-theme-name>.js` file
+        and `data.json` if necessary.
+    * Take a screenshot!
     * Create a `README.md` file
-    * Put your screenshots in `README.md` file also your instructions if needed
+    * Put your screenshot in `README.md` file also your instructions if needed
     * Best practice add a demo maybe a Netlify demo which is done in minutes
 
 11. Create a new [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from `<your-branch-name>`
