@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+
+$font-family-guns-akimbo: 'Teko', sans-serif;
+$color-primary: #000000;
+$color-secondary: #dc246a;
+$color-tertiary: #dab10b;
+
+body {
+    color: $color-primary;
+    font-family: $font-family-guns-akimbo;
+
+    background-image: linear-gradient(
+        100deg,
+        rgba($color-tertiary, .9) 46%,
+        rgba($color-secondary, .9) 46%
+    );
+
+    @include respond(phone) {
+        background-image: linear-gradient(
+            94deg,
+            rgba($color-tertiary, .9) 45%,
+            rgba($color-secondary, .9) 45%
+        );
+    }
+}
+
+.logo {
+    fill: var(--color-white);
+}
+
+.links {
+    list-style: none;
+}
+
+.link {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        display: block;
+        color: $color-tertiary;
+        background-color: $color-primary;
+        padding: .5rem 1.5rem;
+        text-align: center;
+        
+        font-size: 3.5rem;
+        text-transform: uppercase;
+    }    
+}
+
+.link-item {
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    margin-top: 5rem;
+    grid-column-gap: 2rem;
+    justify-content: center;
+}
+
+.social-link {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        display: block;
+        color: $color-primary;
+    }    
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+
+    cursor: pointer;
+}
